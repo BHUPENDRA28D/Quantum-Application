@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "674089363351",
+    "project_id": "quantum-classes-94014",
+    "storage_bucket": "quantum-classes-94014.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674089363351:android:fc65903288a06dca1ec6d2",
+        "android_client_info": {
+          "package_name": "com.example.quantumclasses"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "674089363351-gvm7j7nrvs8i77mdffg8hh35bharaouf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjoeMq9VZM_ftQNdS-JraQ5Rs4DywnK4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "674089363351-gvm7j7nrvs8i77mdffg8hh35bharaouf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
