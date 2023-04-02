@@ -13,6 +13,12 @@
         android:icon="@drawable/course"></item>
 
     <item
+        android:id="@+id/faculty"
+        android:enabled="true"
+        android:title="Faculty"
+        android:icon="@drawable/teacher"></item>
+
+    <item
         android:id="@+id/study_material"
         android:enabled="true"
         android:title="Study Material"
@@ -21,6 +27,6 @@
         android:id="@+id/profile"
         android:enabled="true"
         android:title="Profile"
-        android:icon="@drawable/profile"></item>
+        android:icon="@drawable/user"></item>
 
 </menu>

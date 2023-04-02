@@ -10,11 +10,23 @@
     android:layout_margin="4dp"
     android:padding="20dp">
 
+<!--    <com.github.ybq.android.spinkit.SpinKitView-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:id="@+id/PB_login"-->
+<!--    style="@style/SpinKitView.FoldingCube"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_gravity="center" />-->
+
+
     <ImageView
         android:id="@+id/log_img"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/icon" />
+        android:src="@drawable/icon"
+        android:layout_gravity="center"/>
+
+
 
     <TextView
         android:id="@+id/log_title"
@@ -31,6 +43,10 @@
         android:layout_height="wrap_content"
         android:text="Sign In to continue"
         android:textSize="20sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -104,6 +120,8 @@
             android:elevation="6dp" />
 
     </LinearLayout>
+
+    </ScrollView>
 
 
 </LinearLayout>

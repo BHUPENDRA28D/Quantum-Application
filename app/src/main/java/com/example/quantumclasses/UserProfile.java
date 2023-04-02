@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class UserProfile extends AppCompatActivity {
 
+    LinearLayout profile;
+
     TextView prfFullName,prfUsername;
     TextInputLayout prfEmail, prfPhone,prfPassword;
     AppCompatButton update,logout;
@@ -35,6 +38,7 @@ public class UserProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
+        profile = findViewById(R.id.profileView);
         prfFullName =findViewById(R.id.prf_fullname);
         prfUsername =findViewById(R.id.prf_username);
         prfEmail =findViewById(R.id.prf_email);
@@ -46,6 +50,7 @@ public class UserProfile extends AppCompatActivity {
         authProfile = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser =authProfile.getCurrentUser();
 //        dbProfile = FirebaseDatabase.getInstance();
+
 
 
 
@@ -75,8 +80,6 @@ public class UserProfile extends AppCompatActivity {
 
             }
         });
-
-
 
     }
 

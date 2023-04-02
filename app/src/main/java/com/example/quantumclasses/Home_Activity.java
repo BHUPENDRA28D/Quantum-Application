@@ -8,17 +8,21 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class Home_Activity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     WebView webView;
+    SpinKitView spinKitView;
+
 
 
     @Override
@@ -30,6 +34,7 @@ public class Home_Activity extends AppCompatActivity {
         webView = findViewById(R.id.idWV);
         bottomNavigationView =findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
+
 
 // use of setOnItemSelectedListener methode
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -43,6 +48,11 @@ public class Home_Activity extends AppCompatActivity {
 
                     case R.id.course:startActivity(new Intent(getApplication(),
                             Course.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.faculty:startActivity(new Intent(getApplication(),
+                            Teacher.class));
                         overridePendingTransition(0,0);
                         return true;
 
@@ -68,9 +78,11 @@ public class Home_Activity extends AppCompatActivity {
 
 
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://quantumclasses.co.in/");
+        webView.loadUrl("https://bhupendra28d.github.io/quantumclassesweb/");
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+
+
     }
 
     private class MyWebClient  extends WebViewClient{
@@ -78,6 +90,7 @@ public class Home_Activity extends AppCompatActivity {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
+
         }
 
         @Override

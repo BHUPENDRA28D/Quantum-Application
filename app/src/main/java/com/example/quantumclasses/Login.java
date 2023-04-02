@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -30,8 +31,13 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Login extends AppCompatActivity {
+
+    SpinKitView spinKitViewPB_login;
+    int counter =0;
     Button callSignUp,forgetPaswordBtn;
     AppCompatButton login_btn;
     ImageView image;
@@ -47,6 +53,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+//        spinKitViewPB_login = findViewById(R.id.PB_login);
         callSignUp =findViewById(R.id.idSignup_btn);
         login_btn =findViewById(R.id.loginBtn_ofLoginPage);
         image = findViewById(R.id.log_img);
@@ -107,9 +115,10 @@ public class Login extends AppCompatActivity {
         if (!validateUsername() | !validatePassword()) {
             return;
         }else {
+            spinKitViewPB_login.setVisibility(View.VISIBLE);
 
             perforLogin();
-//            isUser();
+////            isUser();
         }
         // fetching data from password to compare data from firebase and data filled by user.
 
@@ -122,6 +131,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    spinKitViewPB_login.setVisibility(View.GONE );
                     Toast.makeText(Login.this, "Login Succesfull", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(),Home_Activity.class));
                     finish();

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Study_Material">
 
     <!--  <androidx.appcompat.widget.Toolbar-->
     <!--      android:layout_width="match_parent"-->
@@ -13,22 +13,18 @@
     <!--      android:background="@color/white"-->
     <!--      android:id="@id/idToolbar"/>-->
 
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/idSV_Teach">
         <WebView
-            android:id="@+id/idWV"
+            android:id="@+id/idWV_Teach"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-
-<!--    <com.github.ybq.android.spinkit.SpinKitView-->
-<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--        android:id="@+id/spin_kit"-->
-<!--        style="@style/SpinKitView.FoldingCube"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center" />-->
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+        android:id="@+id/SM_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/navigation_bar"
@@ -38,4 +34,3 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="-4dp"/>
 </RelativeLayout>
-

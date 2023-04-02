@@ -26,7 +26,7 @@ public class Study_Material extends AppCompatActivity {
         webView = findViewById(R.id.idWV_SM);
 
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://quantumclasses.co.in/category/study-material/");
+        webView.loadUrl("https://bhupendra28d.github.io/quantumclassesweb/studymaterials.html");
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
@@ -48,6 +48,10 @@ public class Study_Material extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
+                    case R.id.faculty:startActivity(new Intent(getApplication(),
+                            Teacher.class));
+                        overridePendingTransition(0,0);
+                        return true;
                     case R.id.study_material:startActivity(new Intent(getApplication(),
                             Study_Material.class));
                         overridePendingTransition(0,0);

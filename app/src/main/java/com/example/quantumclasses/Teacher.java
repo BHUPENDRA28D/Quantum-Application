@@ -1,5 +1,8 @@
 package com.example.quantumclasses;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -9,24 +12,27 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class Course extends AppCompatActivity {
+public class Teacher extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     WebView webView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course);
+        setContentView(R.layout.activity_study_material);
 
-        webView = findViewById(R.id.idWV_Course);
-        bottomNavigationView =findViewById(R.id.Course_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.course);
+        webView = findViewById(R.id.idWV_SM);
+
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("https://bhupendra28d.github.io/quantumclassesweb/about.html");
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+
+        bottomNavigationView =findViewById(R.id.SM_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.study_material);
 // use of setOnItemSelectedListener methode
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -65,13 +71,6 @@ public class Course extends AppCompatActivity {
 //        bottomNavigationView.setSelectedItemId(R.id.course);
 //        bottomNavigationView.setSelectedItemId(R.id.study_material);
 //        bottomNavigationView.setSelectedItemId(R.id.profile);
-
-
-
-        webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://bhupendra28d.github.io/quantumclassesweb/courses.html");
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
     }
 
     private class MyWebClient  extends WebViewClient{
@@ -94,4 +93,4 @@ public class Course extends AppCompatActivity {
         }else {
             super.onBackPressed();}
     }
-    }
+}
